@@ -36,4 +36,12 @@ describe("input component", () => {
     fireEvent.change(inputElement, { target: { value: '새로운 할 일' } });
     expect(mockOnChange).toHaveBeenCalled();
   });
+
+  it('calls onEnter when Enter key is pressed', () => {
+    render(<Input {...defaultProps} />);
+    const inputElement = screen.getByPlaceholderText('할 일을 입력해 주세요.');
+    
+    fireEvent.keyDown(inputElement, { key: 'Enter' });
+    expect(mockOnEnter).toHaveBeenCalled();
+  });
 })
