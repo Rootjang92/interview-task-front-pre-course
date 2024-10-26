@@ -44,4 +44,12 @@ describe("input component", () => {
     fireEvent.keyDown(inputElement, { key: 'Enter' });
     expect(mockOnEnter).toHaveBeenCalled();
   });
+
+  it('does not call onEnter when other keys are pressed', () => {
+    render(<Input {...defaultProps} />);
+    const inputElement = screen.getByPlaceholderText('할 일을 입력해 주세요.');
+    
+    fireEvent.keyDown(inputElement, { key: 'Space' });
+    expect(mockOnEnter).not.toHaveBeenCalled();
+  });
 })
