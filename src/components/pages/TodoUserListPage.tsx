@@ -16,6 +16,7 @@ const TodoUserListPage = ({}: Props) => {
   const [todoValue, setTodoValue] = useState('');
 
   const handleChangeTodoValue = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
     setTodoValue(e.target.value);
   };
 
@@ -29,8 +30,6 @@ const TodoUserListPage = ({}: Props) => {
     setTodos([...todos, newTodo]);
     setTodoValue('');
   }
-
-  console.log(todos);
 
   return (
     <section className="flex flex-col items-center justify-center font-pretendard">
