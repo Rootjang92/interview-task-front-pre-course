@@ -1,16 +1,12 @@
 "use client";
-import React from "react";
-import styled from "@emotion/styled";
-
-const Container = styled.div``;
 
 interface Props {}
 
 const TodoUserListPage = ({}: Props) => {
   return (
-    <Container>
-      <div>todo</div>
-    </Container>
+    <section className="bg-gray-500">
+      <div className="text-3xl">todo</div>
+    </section>
   );
 };
 
