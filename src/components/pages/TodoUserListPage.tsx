@@ -58,7 +58,18 @@ const TodoUserListPage = () => {
 
   const handleTab = (tab: TabType) => {
     setActiveTab(tab);
-  }
+  };
+
+  const filteredTodos = todos.filter((todo) => {
+    switch (activeTab) {
+      case "todo":
+        return !todo.done;
+      case "done":
+        return todo.done;
+      default:
+        return true;
+    }
+  });
 
   return (
     <section className="flex flex-col items-center justify-center font-pretendard">
@@ -71,7 +82,7 @@ const TodoUserListPage = () => {
         <span className="w-full text-[20px] text-black">총 {todos.length}개</span>
         <ul className="w-full">
           {
-            todos.map((todo) => <TodoItem todo={todo} onToggle={handleToggleTodo} />)
+            filteredTodos.map((todo) => <TodoItem todo={todo} onToggle={handleToggleTodo} />)
           }
         </ul>
       </article>
