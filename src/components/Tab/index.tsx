@@ -12,7 +12,7 @@ const Tab = ({ activeTab, value, label, onTabChange }: Props) => {
     <button 
       key={value} 
       onClick={() => onTabChange(value)}
-      className={`flex-1 px-4 py-2 text-sm rounded-md transition-all duration-200 ${activeTab === value ? "text-blue-600 shadow-sm" : "hover:text-blue-600"}`}
+      className={`px-8 py-2 text-[16px] rounded-md transition-all duration-200 font-semibold ${activeTab === value ? "text-[#2182F3] bg-[#EBF4FF]" : "hover:text-[#2182F3] text-#454545"}`}
     >
       {label}
     </button>
