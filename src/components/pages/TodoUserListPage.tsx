@@ -7,7 +7,7 @@ interface Props {}
 
 interface Todo {
   id: number,
-  todo: string;
+  todoText: string;
   done: boolean;
 }
 
@@ -16,14 +16,13 @@ const TodoUserListPage = ({}: Props) => {
   const [todoValue, setTodoValue] = useState('');
 
   const handleChangeTodoValue = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     setTodoValue(e.target.value);
   };
 
   const handleAddTodo = () => {
     const newTodo: Todo = {
       id: Date.now(),
-      todo: todoValue,
+      todoText: todoValue,
       done: false
     };
 
