@@ -56,6 +56,10 @@ const TodoUserListPage = () => {
     setTodos(todos.map((todo => todo.id === id ? { ...todo, done: !todo.done} : todo )))
   };
 
+  const handleDeleteTodo = (id: number) => {
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
+
   const handleTab = (tab: TabType) => {
     setActiveTab(tab);
   };
@@ -82,7 +86,7 @@ const TodoUserListPage = () => {
         <span className="w-full text-[20px] text-black">총 {todos.length}개</span>
         <ul className="w-full">
           {
-            filteredTodos.map((todo) => <TodoItem todo={todo} onToggle={handleToggleTodo} />)
+            filteredTodos.map((todo) => <TodoItem todo={todo} onToggle={handleToggleTodo} onDelete={handleDeleteTodo} />)
           }
         </ul>
       </article>
