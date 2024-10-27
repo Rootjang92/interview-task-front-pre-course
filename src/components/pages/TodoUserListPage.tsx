@@ -81,7 +81,7 @@ const TodoUserListPage = () => {
       <Input value={todoValue} onChange={handleChangeTodoValue} onEnter={handleAddTodo} />
       <article className="p-8 rounded-[24px] w-full bg-white shadow-md flex flex-col gap-8">
         <div className="w-full flex items-center justify-center gap-2">
-          {TODO_TABS.map((tab) => <Tab value={tab.value} label={tab.label} onTabChange={handleTab} activeTab={activeTab} />)}
+          {TODO_TABS.map((tab) => <Tab key={tab.value} value={tab.value} label={tab.label} onTabChange={handleTab} activeTab={activeTab} />)}
         </div>
         <span className="w-full text-[20px] text-black">총 {todos.length}개</span>
         <ul className="w-full">

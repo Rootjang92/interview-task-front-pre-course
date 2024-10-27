@@ -10,7 +10,6 @@ interface Props {
 const Tab = ({ activeTab, value, label, onTabChange }: Props) => {
   return (
     <button 
-      key={value} 
       onClick={() => onTabChange(value)}
       className={`px-8 py-2 text-[16px] rounded-md transition-all duration-200 font-semibold ${activeTab === value ? "text-[#2182F3] bg-[#EBF4FF]" : "hover:text-[#2182F3] text-#454545"}`}
     >
