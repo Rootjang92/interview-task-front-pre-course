@@ -39,9 +39,14 @@ const TodoUserListPage = ({}: Props) => {
     <section className="flex flex-col items-center justify-center font-pretendard">
       <h1 className="text-6xl font-bold pt-10 text-[#333333]">To Do List</h1>
       <Input value={todoValue} onChange={handleChangeTodoValue} onEnter={handleAddTodo} />
-      {
-        todos.map((todo) => <TodoItem todo={todo} onToggle={handleToggleTodo} />)
-      }
+      <article className="p-8 rounded-[24px] w-full bg-white shadow-md">
+        <span className="w-full text-[20px]">총 {todos.length}개</span>
+        <ul className="w-full">
+          {
+            todos.map((todo) => <TodoItem todo={todo} onToggle={handleToggleTodo} />)
+          }
+        </ul>
+      </article>
     </section>
   );
 };
