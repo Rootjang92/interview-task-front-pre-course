@@ -1,4 +1,4 @@
-type TabType = "all" | "todo" | "done";
+import { TabType } from "../../types/todo";
 
 interface Props {
   activeTab: TabType;

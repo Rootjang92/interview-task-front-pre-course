@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 import Tab from ".";
 
-type TabType = "all" | "todo" | "done";
+import { TabType } from "../../types/todo";
 
 describe('Tab', () => {
   const defaultProps = {

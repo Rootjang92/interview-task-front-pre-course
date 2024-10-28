@@ -5,12 +5,7 @@ import Input from "../Input";
 import TodoItem from "../TodoItem";
 import Tab from "../Tab";
 
-type TabType = "all" | "todo" | "done";
-interface Todo {
-  id: number,
-  todoText: string;
-  done: boolean;
-}
+import { TabType, Todo } from "../../types/todo";
 
 interface TabConfig {
   value: TabType,
